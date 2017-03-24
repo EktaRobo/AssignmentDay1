@@ -1,4 +1,4 @@
-package com.example.ekta.assignmentday1;
+package com.example.ekta.assignmentday1.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,6 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatButton;
 import android.support.v7.widget.AppCompatEditText;
 import android.view.View;
+
+import com.example.ekta.assignmentday1.R;
 
 public class MainActivity extends AppCompatActivity {
 

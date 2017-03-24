@@ -1,12 +1,12 @@
-package com.example.ekta.assignmentday1.adapter;
+package com.example.ekta.assignmentday1.ui.adapter;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import com.example.ekta.assignmentday1.R;
-import com.example.ekta.assignmentday1.networkmodel.GitHubRepo;
-import com.example.ekta.assignmentday1.viewholders.GitHubRepoViewHolder;
+import com.example.ekta.assignmentday1.ui.networkmodel.GitHubRepo;
+import com.example.ekta.assignmentday1.ui.viewholders.GitHubRepoViewHolder;
 
 import java.util.ArrayList;
 

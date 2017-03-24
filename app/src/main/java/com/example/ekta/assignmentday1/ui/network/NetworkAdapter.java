@@ -1,9 +1,10 @@
-package com.example.ekta.assignmentday1.network;
+package com.example.ekta.assignmentday1.ui.network;
 
 import android.util.Log;
 
-import com.example.ekta.assignmentday1.OnListFetchListener;
-import com.example.ekta.assignmentday1.networkmodel.GitHubRepo;
+import com.example.ekta.assignmentday1.ui.OnListFetchListener;
+import com.example.ekta.assignmentday1.ui.application.GithubRepoApplication;
+import com.example.ekta.assignmentday1.ui.networkmodel.GitHubRepo;
 
 import java.util.ArrayList;
 
@@ -15,7 +16,6 @@ public class NetworkAdapter {
 
     private static final String TAG = NetworkAdapter.class.getSimpleName();
     private static NetworkAdapter sInstance = null;
-    private ApiInterface mApiService = ApiClient.getClient().create(ApiInterface.class);
 
     private NetworkAdapter() {
         // Exists only to defeat instantiation.
@@ -29,7 +29,8 @@ public class NetworkAdapter {
     }
 
     public void getUserData(final OnListFetchListener listener, String githubUserName) {
-        Call<ArrayList<GitHubRepo>> call = mApiService.getList(githubUserName);
+        Call<ArrayList<GitHubRepo>> call = GithubRepoApplication.getsNetworkComponent()
+                .provideRetrofit().create(ApiInterface.class).getList(githubUserName);
         call.enqueue(new Callback<ArrayList<GitHubRepo>>() {
             @Override
             public void onResponse(Call<ArrayList<GitHubRepo>> call,

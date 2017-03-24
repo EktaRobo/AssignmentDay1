@@ -1,4 +1,4 @@
-package com.example.ekta.assignmentday1;
+package com.example.ekta.assignmentday1.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,9 +7,10 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 
-import com.example.ekta.assignmentday1.adapter.GitHubRepoRecyclerAdapter;
-import com.example.ekta.assignmentday1.network.NetworkAdapter;
-import com.example.ekta.assignmentday1.networkmodel.GitHubRepo;
+import com.example.ekta.assignmentday1.R;
+import com.example.ekta.assignmentday1.ui.adapter.GitHubRepoRecyclerAdapter;
+import com.example.ekta.assignmentday1.ui.network.NetworkAdapter;
+import com.example.ekta.assignmentday1.ui.networkmodel.GitHubRepo;
 
 import java.util.ArrayList;
 
