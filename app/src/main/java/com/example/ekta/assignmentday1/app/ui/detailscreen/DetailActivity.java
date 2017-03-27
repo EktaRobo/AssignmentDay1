@@ -84,6 +84,7 @@ public class DetailActivity extends AppCompatActivity implements DetailContract.
         LinearLayoutManager layoutManager = new LinearLayoutManager(DetailActivity
                 .this);
         recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setNestedScrollingEnabled(false);
         recyclerView.setAdapter(adapter);
     }
 }
