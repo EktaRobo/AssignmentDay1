@@ -5,7 +5,7 @@ import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
 import com.example.ekta.assignmentday1.R;
-import com.example.ekta.assignmentday1.app.networkmodel.GitHubRepo;
+import com.example.ekta.assignmentday1.app.database.models.GitHubUserRepository;
 import com.example.ekta.assignmentday1.app.viewholders.GitHubRepoViewHolder;
 
 import java.util.ArrayList;
@@ -16,9 +16,9 @@ import java.util.ArrayList;
 
 public class GitHubRepoRecyclerAdapter extends RecyclerView.Adapter<GitHubRepoViewHolder> {
 
-    private ArrayList<GitHubRepo> mGitHubRepos;
+    private ArrayList<GitHubUserRepository> mGitHubRepos;
 
-    public GitHubRepoRecyclerAdapter(ArrayList<GitHubRepo> gitHubRepos) {
+    public GitHubRepoRecyclerAdapter(ArrayList<GitHubUserRepository> gitHubRepos) {
 
         mGitHubRepos = gitHubRepos;
     }
@@ -32,8 +32,8 @@ public class GitHubRepoRecyclerAdapter extends RecyclerView.Adapter<GitHubRepoVi
 
     @Override
     public void onBindViewHolder(GitHubRepoViewHolder holder, int position) {
-        GitHubRepo gitHubRepo = mGitHubRepos.get(position);
-        holder.mRepositoryName.setText(gitHubRepo.getName());
+        GitHubUserRepository gitHubRepo = mGitHubRepos.get(position);
+        holder.mRepositoryName.setText(gitHubRepo.getRepositoryName());
 
     }
 

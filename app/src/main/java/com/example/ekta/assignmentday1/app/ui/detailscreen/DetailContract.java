@@ -2,7 +2,7 @@ package com.example.ekta.assignmentday1.app.ui.detailscreen;
 
 import android.graphics.Bitmap;
 
-import com.example.ekta.assignmentday1.app.networkmodel.GitHubRepo;
+import com.example.ekta.assignmentday1.app.database.models.GitHubUserRepository;
 
 import java.util.ArrayList;
 
@@ -20,7 +20,7 @@ public interface DetailContract {
 
         void displayUserName(String userName);
 
-        void displayListItems(ArrayList<GitHubRepo> gitHubRepos);
+        void displayListItems(ArrayList<GitHubUserRepository> gitHubRepos);
 
     }
 

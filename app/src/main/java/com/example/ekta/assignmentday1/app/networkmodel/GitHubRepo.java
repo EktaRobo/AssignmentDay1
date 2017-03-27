@@ -15,21 +15,12 @@ public class GitHubRepo {
     @SerializedName("name")
     @Expose
     private String name;
-    @SerializedName("full_name")
-    @Expose
-    private String fullName;
     @SerializedName("owner")
     @Expose
     private Owner owner;
     @SerializedName("private")
     @Expose
     private Boolean _private;
-    @SerializedName("html_url")
-    @Expose
-    private String htmlUrl;
-    @SerializedName("description")
-    @Expose
-    private Object description;
 
     public Integer getId() {
         return id;
@@ -38,11 +29,6 @@ public class GitHubRepo {
     public String getName() {
         return name;
     }
-
-    public String getFullName() {
-        return fullName;
-    }
-
     public Owner getOwner() {
         return owner;
     }
@@ -51,24 +37,13 @@ public class GitHubRepo {
         return _private;
     }
 
-    public String getHtmlUrl() {
-        return htmlUrl;
-    }
-
-    public Object getDescription() {
-        return description;
-    }
-
     @Override
     public String toString() {
         return "GitHubRepo{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
-                ", fullName='" + fullName + '\'' +
                 ", owner=" + owner +
                 ", _private=" + _private +
-                ", htmlUrl='" + htmlUrl + '\'' +
-                ", description=" + description +
                 '}';
     }
 }

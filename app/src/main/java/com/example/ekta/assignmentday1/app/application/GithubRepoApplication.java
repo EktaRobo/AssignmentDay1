@@ -8,6 +8,8 @@ import com.example.ekta.assignmentday1.dagger.components.NetworkComponent;
 import com.example.ekta.assignmentday1.dagger.components.RepositoryComponent;
 import com.example.ekta.assignmentday1.dagger.modules.ContextModule;
 
+import io.realm.Realm;
+
 /**
  * Created by ekta on 24/3/17.
  */
@@ -32,6 +34,8 @@ public class GithubRepoApplication extends Application {
                 (this)).build();
         sRepositoryComponent = DaggerRepositoryComponent.builder().networkComponent
                 (sNetworkComponent).build();
+        Realm.init(this);
+//        RealmDbManager.createInstance();
 
     }
 }

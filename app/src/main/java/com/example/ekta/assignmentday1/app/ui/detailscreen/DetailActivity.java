@@ -13,7 +13,7 @@ import com.example.ekta.assignmentday1.R;
 import com.example.ekta.assignmentday1.app.Constants;
 import com.example.ekta.assignmentday1.app.adapter.GitHubRepoRecyclerAdapter;
 import com.example.ekta.assignmentday1.app.application.GithubRepoApplication;
-import com.example.ekta.assignmentday1.app.networkmodel.GitHubRepo;
+import com.example.ekta.assignmentday1.app.database.models.GitHubUserRepository;
 import com.example.ekta.assignmentday1.app.utilities.LoaderDialogUtil;
 import com.example.ekta.assignmentday1.dagger.components.DaggerDetailScreenComponent;
 import com.example.ekta.assignmentday1.dagger.components.DetailScreenComponent;
@@ -85,14 +85,11 @@ public class DetailActivity extends AppCompatActivity implements DetailContract.
 
     @Override
     public void displayAvatarImage(final Bitmap bitmap) {
-        runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                ImageView imageView = (ImageView) findViewById(R.id.avatar);
-                imageView.setImageBitmap(bitmap);
-            }
-        });
-
+        if (bitmap == null) {
+            return;
+        }
+        ImageView imageView = (ImageView) findViewById(R.id.avatar);
+        imageView.setImageBitmap(bitmap);
     }
 
     @Override
@@ -102,7 +99,7 @@ public class DetailActivity extends AppCompatActivity implements DetailContract.
     }
 
     @Override
-    public void displayListItems(ArrayList<GitHubRepo> gitHubRepos) {
+    public void displayListItems(ArrayList<GitHubUserRepository> gitHubRepos) {
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         GitHubRepoRecyclerAdapter adapter = new GitHubRepoRecyclerAdapter(gitHubRepos);
         LinearLayoutManager layoutManager = new LinearLayoutManager(DetailActivity

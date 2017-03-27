@@ -2,7 +2,7 @@ package com.example.ekta.assignmentday1.app.data;
 
 import android.graphics.Bitmap;
 
-import com.example.ekta.assignmentday1.app.networkmodel.GitHubRepo;
+import com.example.ekta.assignmentday1.app.database.models.GitHubUserRepository;
 
 import java.util.ArrayList;
 
@@ -25,7 +25,7 @@ public interface DataSource {
 
     interface LoadDataCallback {
 
-        void onDataLoaded(ArrayList<GitHubRepo> gitHubRepos);
+        void onDataLoaded(ArrayList<GitHubUserRepository> gitHubRepos);
 
         void onDataNotAvailable();
     }
