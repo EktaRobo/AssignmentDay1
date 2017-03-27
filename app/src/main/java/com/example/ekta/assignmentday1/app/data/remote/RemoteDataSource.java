@@ -76,18 +76,23 @@ public class RemoteDataSource implements DataSource {
             public void onSuccess(Response<ArrayList<GitHubRepo>> response) {
 
                 ArrayList<GitHubRepo> gitHubRepos = response.body();
-                ArrayList<GitHubUserRepository> gitHubUserRepositories = new ArrayList
-                        <>();
-                for (GitHubRepo gitHubRepo : gitHubRepos) {
-                    GitHubUserRepository gitHubUserRepository = new GitHubUserRepository();
-                    gitHubUserRepository.setIsPrivate(gitHubRepo.get_private());
-                    gitHubUserRepository.setRepositoryName(gitHubRepo.getName());
-                    gitHubUserRepositories.add(gitHubUserRepository);
+                if (gitHubRepos != null && gitHubRepos.size() > 0) {
 
+                    ArrayList<GitHubUserRepository> gitHubUserRepositories = new ArrayList
+                            <>();
+                    for (GitHubRepo gitHubRepo : gitHubRepos) {
+                        GitHubUserRepository gitHubUserRepository = new GitHubUserRepository();
+                        gitHubUserRepository.setIsPrivate(gitHubRepo.get_private());
+                        gitHubUserRepository.setRepositoryName(gitHubRepo.getName());
+                        gitHubUserRepositories.add(gitHubUserRepository);
+
+                    }
+
+                    DatabaseHelper.addToDatabase(gitHubRepos, githubName, gitHubUserRepositories);
+                    loadDataCallback.onDataLoaded(gitHubUserRepositories);
+                } else {
+                    loadDataCallback.onDataNotAvailable();
                 }
-
-                DatabaseHelper.addToDatabase(gitHubRepos, githubName, gitHubUserRepositories);
-                loadDataCallback.onDataLoaded(gitHubUserRepositories);
             }
 
             @Override
