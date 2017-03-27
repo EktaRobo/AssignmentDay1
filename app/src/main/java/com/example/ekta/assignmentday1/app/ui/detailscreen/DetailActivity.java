@@ -1,4 +1,4 @@
-package com.example.ekta.assignmentday1.app.ui;
+package com.example.ekta.assignmentday1.app.ui.detailscreen;
 
 import android.content.Intent;
 import android.os.Bundle;

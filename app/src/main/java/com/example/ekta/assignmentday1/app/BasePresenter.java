@@ -5,5 +5,5 @@ package com.example.ekta.assignmentday1.app;
  */
 
 public interface BasePresenter {
-    void start();
+
 }
