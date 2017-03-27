@@ -16,6 +16,7 @@ public class DetailPresenter implements DetailContract.Presenter, DataSource.Loa
         DataSource.LoadImageCallback {
     private DetailContract.View mView;
     private DataRepository mDataRepository;
+    private String mGithubUserName;
 
     public DetailPresenter(DetailContract.View view, DataRepository dataRepository) {
         mView = view;
@@ -24,6 +25,7 @@ public class DetailPresenter implements DetailContract.Presenter, DataSource.Loa
 
     @Override
     public void start(final String githubUserName) {
+        mGithubUserName = githubUserName;
         if (mDataRepository != null && mView != null) {
             mView.displayUserName(githubUserName);
             mView.showProgress();
@@ -35,7 +37,7 @@ public class DetailPresenter implements DetailContract.Presenter, DataSource.Loa
     public void onDataLoaded(ArrayList<GitHubUserRepository> gitHubRepos) {
         if (mView != null) {
             mView.hideProgress();
-            mDataRepository.getImage(DetailPresenter.this);
+            mDataRepository.getImage(DetailPresenter.this, mGithubUserName);
             mView.displayListItems(gitHubRepos);
         }
     }

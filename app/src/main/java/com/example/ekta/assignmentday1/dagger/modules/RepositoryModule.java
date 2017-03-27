@@ -29,8 +29,8 @@ public class RepositoryModule {
     @Provides
     @RepositoryScope
     @Local
-    public DataSource provideLocalDataSource() {
-        return new LocalDataSource();
+    public DataSource provideLocalDataSource(RequestManager requestManager) {
+        return new LocalDataSource(requestManager);
     }
 
     @Provides

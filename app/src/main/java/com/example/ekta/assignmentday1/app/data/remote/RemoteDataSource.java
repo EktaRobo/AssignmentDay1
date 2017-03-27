@@ -28,7 +28,7 @@ public class RemoteDataSource implements DataSource {
     }
 
     @Override
-    public void getImage(final LoadImageCallback loadImageCallback) {
+    public void getImage(final LoadImageCallback loadImageCallback, String gitHubUserName) {
         String avatarUrl = null;
         GetBitmapFromUrl getBitmapFromUrl = new GetBitmapFromUrl(mRequestManager) {
             @Override

@@ -5,6 +5,7 @@ import com.example.ekta.assignmentday1.app.database.models.GitHubUserRepository;
 import com.example.ekta.assignmentday1.app.networkmodel.GitHubRepo;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import io.realm.Realm;
 import io.realm.RealmList;
@@ -25,7 +26,7 @@ public class DatabaseHelper {
     public static void addToDatabase(final ArrayList<GitHubRepo> gitHubRepos, final String
             githubName, final ArrayList<GitHubUserRepository> gitHubUserRepositories) {
         Realm realm = Realm.getDefaultInstance();
-        realm.executeTransactionAsync(new Realm.Transaction() {
+        realm.executeTransaction(new Realm.Transaction() {
             @Override
             public void execute(Realm realm) {
                 GitHubUser gitHubUser = new GitHubUser();
@@ -46,4 +47,27 @@ public class DatabaseHelper {
     }
 
 
+    public static String fetchAvatarUrl(String gitHubUserName) {
+        Realm realm = Realm.getDefaultInstance();
+        GitHubUser gitHubUser = realm.where(GitHubUser
+                .class).contains("mGitHubUserName", gitHubUserName).findFirst();
+        if (gitHubUser == null) {
+            return null;
+        }
+        return gitHubUser.getAvatarUrl();
+
+    }
+
+    public static ArrayList<GitHubUserRepository> fetchUserRepositoryData(String gitHubUserName) {
+        Realm realm = Realm.getDefaultInstance();
+        GitHubUser gitHubUser = realm.where(GitHubUser
+                .class).contains("mGitHubUserName", gitHubUserName).findFirst();
+        if (gitHubUser == null) {
+            return null;
+        }
+        List<GitHubUserRepository> repositories = realm.copyFromRealm(gitHubUser
+                .getGitHubUserRepositories());
+        return (ArrayList<GitHubUserRepository>) repositories;
+
+    }
 }

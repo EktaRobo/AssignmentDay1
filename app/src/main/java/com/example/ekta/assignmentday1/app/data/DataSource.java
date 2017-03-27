@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 public interface DataSource {
 
-    void getImage(LoadImageCallback loadImageCallback);
+    void getImage(LoadImageCallback loadImageCallback, String gitHubUserName);
 
     void getRepositoryData(LoadDataCallback loadDataCallback, String githubName);
 

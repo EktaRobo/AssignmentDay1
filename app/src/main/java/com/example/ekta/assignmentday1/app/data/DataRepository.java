@@ -20,7 +20,7 @@ public class DataRepository implements DataSource {
     }
 
     @Override
-    public void getImage(final LoadImageCallback loadImageCallback) {
+    public void getImage(final LoadImageCallback loadImageCallback, final String gitHubUserName) {
         mLocalDataSource.getImage(new LoadImageCallback() {
             @Override
             public void onImageLoaded(Bitmap bitmap) {
@@ -29,9 +29,9 @@ public class DataRepository implements DataSource {
 
             @Override
             public void onImageNotAvailable() {
-                mRemoteDataSource.getImage(loadImageCallback);
+                mRemoteDataSource.getImage(loadImageCallback, gitHubUserName);
             }
-        });
+        }, gitHubUserName);
     }
 
     @Override
