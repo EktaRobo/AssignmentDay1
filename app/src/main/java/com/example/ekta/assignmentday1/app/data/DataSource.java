@@ -12,7 +12,7 @@ import java.util.ArrayList;
 
 public interface DataSource {
 
-    void getImage(LoadImageCallback loadImageCallback, String githubName);
+    void getImage(LoadImageCallback loadImageCallback);
 
     void getRepositoryData(LoadDataCallback loadDataCallback, String githubName);
 
@@ -20,7 +20,7 @@ public interface DataSource {
 
         void onImageLoaded(Bitmap bitmap);
 
-        void onDataNotAvailable();
+        void onImageNotAvailable();
     }
 
     interface LoadDataCallback {

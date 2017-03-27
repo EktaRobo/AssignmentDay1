@@ -1,6 +1,8 @@
 package com.example.ekta.assignmentday1.app.data.remote;
 
 import android.graphics.Bitmap;
+import android.os.AsyncTask;
+import android.util.Log;
 
 import com.bumptech.glide.RequestManager;
 import com.example.ekta.assignmentday1.app.OnListFetchListener;
@@ -18,6 +20,7 @@ import retrofit2.Response;
  */
 
 public class RemoteDataSource implements DataSource {
+    private static final String TAG = RemoteDataSource.class.getSimpleName();
     private static String sAvatarUrl;
     private RequestManager mRequestManager;
 
@@ -26,19 +29,35 @@ public class RemoteDataSource implements DataSource {
     }
 
     @Override
-    public void getImage(LoadImageCallback loadImageCallback, String githubName) {
-        try {
-            Bitmap theBitmap = mRequestManager.
-                    load(sAvatarUrl).
-                    asBitmap().
-                    into(30, 30). // Width and height
-                    get();
-            loadImageCallback.onImageLoaded(theBitmap);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        }
+    public void getImage(final LoadImageCallback loadImageCallback) {
+        Log.e(TAG, "getImage: avatar URL " + sAvatarUrl);
+        new AsyncTask<Void, Void, Bitmap>() {
+            @Override
+            protected Bitmap doInBackground(Void... params) {
+                Bitmap theBitmap = null;
+                try {
+                    theBitmap = mRequestManager.
+                            load(sAvatarUrl).
+                            asBitmap().
+                            into(30, 30). // Width and height
+                            get();
+
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                } catch (ExecutionException e) {
+                    e.printStackTrace();
+                }
+                return theBitmap;
+            }
+
+            @Override
+            protected void onPostExecute(Bitmap bitmap) {
+                super.onPostExecute(bitmap);
+                loadImageCallback.onImageLoaded(bitmap);
+
+            }
+        }.execute();
+
     }
 
     @Override

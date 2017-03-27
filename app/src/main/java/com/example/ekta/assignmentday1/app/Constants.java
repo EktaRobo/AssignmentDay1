@@ -7,4 +7,5 @@ package com.example.ekta.assignmentday1.app;
 public class Constants {
     public static final String GITHUB_USER_NAME = "github_username";
     public static final String BASE_URL = "https://api.github.com/";
+    public static final String LOADER_FRAGMENT = "loader_fragment";
 }
