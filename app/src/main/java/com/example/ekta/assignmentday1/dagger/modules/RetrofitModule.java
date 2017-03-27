@@ -1,7 +1,7 @@
 package com.example.ekta.assignmentday1.dagger.modules;
 
-import com.example.ekta.assignmentday1.dagger.ApplicationScope;
-import com.example.ekta.assignmentday1.ui.Constants;
+import com.example.ekta.assignmentday1.app.Constants;
+import com.example.ekta.assignmentday1.dagger.scopes.ApplicationScope;
 
 import dagger.Module;
 import dagger.Provides;
@@ -13,7 +13,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 /**
  * Created by ekta on 24/3/17.
  */
-@ApplicationScope
+
 @Module
 public class RetrofitModule {
 

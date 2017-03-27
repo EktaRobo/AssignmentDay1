@@ -2,8 +2,6 @@ package com.example.ekta.assignmentday1.dagger.modules;
 
 import android.content.Context;
 
-import com.example.ekta.assignmentday1.dagger.ApplicationScope;
-
 import dagger.Module;
 import dagger.Provides;
 
@@ -13,7 +11,7 @@ import dagger.Provides;
  * com.example.ekta.assignmentday1}.
  */
 
-@ApplicationScope
+
 @Module
 public final class ContextModule {
 

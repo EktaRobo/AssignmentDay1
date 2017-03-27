@@ -1,4 +1,4 @@
-package com.example.ekta.assignmentday1.ui.networkmodel;
+package com.example.ekta.assignmentday1.app.networkmodel;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

@@ -1,4 +1,4 @@
-package com.example.ekta.assignmentday1.ui.viewholders;
+package com.example.ekta.assignmentday1.app.viewholders;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;

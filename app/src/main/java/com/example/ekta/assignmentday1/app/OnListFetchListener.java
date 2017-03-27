@@ -1,6 +1,6 @@
-package com.example.ekta.assignmentday1.ui;
+package com.example.ekta.assignmentday1.app;
 
-import com.example.ekta.assignmentday1.ui.networkmodel.GitHubRepo;
+import com.example.ekta.assignmentday1.app.networkmodel.GitHubRepo;
 
 import java.util.ArrayList;
 

@@ -1,10 +1,10 @@
 package com.example.ekta.assignmentday1.dagger.components;
 
 import com.bumptech.glide.RequestManager;
-import com.example.ekta.assignmentday1.dagger.ApplicationScope;
+import com.example.ekta.assignmentday1.app.application.GithubRepoApplication;
 import com.example.ekta.assignmentday1.dagger.modules.GlideModule;
 import com.example.ekta.assignmentday1.dagger.modules.RetrofitModule;
-import com.example.ekta.assignmentday1.ui.application.GithubRepoApplication;
+import com.example.ekta.assignmentday1.dagger.scopes.ApplicationScope;
 
 import dagger.Component;
 import retrofit2.Retrofit;

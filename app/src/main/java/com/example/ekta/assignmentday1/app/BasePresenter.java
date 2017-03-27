@@ -1,4 +1,4 @@
-package com.example.ekta.assignmentday1.ui;
+package com.example.ekta.assignmentday1.app;
 
 /**
  * Created by ekta on 24/3/17.

@@ -1,4 +1,4 @@
-package com.example.ekta.assignmentday1.dagger;
+package com.example.ekta.assignmentday1.dagger.scopes;
 
 import javax.inject.Scope;
 

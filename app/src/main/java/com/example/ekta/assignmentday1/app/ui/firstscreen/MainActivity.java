@@ -1,4 +1,4 @@
-package com.example.ekta.assignmentday1.ui;
+package com.example.ekta.assignmentday1.app.ui.firstscreen;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,6 +8,8 @@ import android.support.v7.widget.AppCompatEditText;
 import android.view.View;
 
 import com.example.ekta.assignmentday1.R;
+import com.example.ekta.assignmentday1.app.Constants;
+import com.example.ekta.assignmentday1.app.ui.DetailActivity;
 
 public class MainActivity extends AppCompatActivity {
 
