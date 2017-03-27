@@ -42,29 +42,6 @@ public class DetailActivity extends AppCompatActivity implements DetailContract.
             String githubName = data.getStringExtra(Constants.GITHUB_USER_NAME);
             mPresenter.start(githubName);
         }
-        /*mDataRepository = GithubRepoApplication.getRepositoryComponent()
-                .provideDataRepository();
-        Intent data = getIntent();
-        if (data != null) {
-            String githubName = data.getStringExtra(Constants.GITHUB_USER_NAME);
-            mDataRepository.getRepositoryData(new DataSource.LoadDataCallback() {
-                @Override
-                public void onDataLoaded(ArrayList<GitHubRepo> gitHubRepos) {
-                    RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
-                    GitHubRepoRecyclerAdapter adapter = new GitHubRepoRecyclerAdapter(gitHubRepos);
-                    LinearLayoutManager layoutManager = new LinearLayoutManager(DetailActivity
-                            .this);
-                    recyclerView.setLayoutManager(layoutManager);
-                    recyclerView.setAdapter(adapter);
-                }
-
-                @Override
-                public void onDataNotAvailable() {
-                    Log.e(TAG, "onFailure: Data unavailable");
-                }
-            }, githubName);
-
-        }*/
     }
 
     @Override
@@ -88,6 +65,8 @@ public class DetailActivity extends AppCompatActivity implements DetailContract.
         if (bitmap == null) {
             return;
         }
+        /*Drawable drawable = new BitmapDrawable(getResources(), bitmap);
+        mToolbar.setLogo(drawable);*/
         ImageView imageView = (ImageView) findViewById(R.id.avatar);
         imageView.setImageBitmap(bitmap);
     }
