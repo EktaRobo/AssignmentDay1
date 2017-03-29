@@ -2,7 +2,6 @@ package com.example.ekta.assignmentday1.app.viewholders;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.ekta.assignmentday1.R;
@@ -12,12 +11,11 @@ import com.example.ekta.assignmentday1.R;
  */
 
 public class GitHubRepoViewHolder extends RecyclerView.ViewHolder {
-    public ImageView mAvatar;
     public TextView mRepositoryName;
 
-    public GitHubRepoViewHolder(View itemView) {
+    public GitHubRepoViewHolder(View itemView, View.OnClickListener clickListener) {
         super(itemView);
-        mAvatar = (ImageView) itemView.findViewById(R.id.avatar);
         mRepositoryName = (TextView) itemView.findViewById(R.id.repository_name);
+        itemView.setOnClickListener(clickListener);
     }
 }

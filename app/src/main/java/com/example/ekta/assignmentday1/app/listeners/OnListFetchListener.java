@@ -1,4 +1,4 @@
-package com.example.ekta.assignmentday1.app;
+package com.example.ekta.assignmentday1.app.listeners;
 
 import com.example.ekta.assignmentday1.app.networkmodel.GitHubRepo;
 

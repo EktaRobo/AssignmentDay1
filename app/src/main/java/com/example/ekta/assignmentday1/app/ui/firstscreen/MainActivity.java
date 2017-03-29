@@ -2,13 +2,13 @@ package com.example.ekta.assignmentday1.app.ui.firstscreen;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatButton;
 import android.support.v7.widget.AppCompatEditText;
 import android.view.View;
 
 import com.example.ekta.assignmentday1.R;
 import com.example.ekta.assignmentday1.app.Constants;
+import com.example.ekta.assignmentday1.app.ui.BaseActivity;
 import com.example.ekta.assignmentday1.app.ui.detailscreen.DetailActivity;
 import com.example.ekta.assignmentday1.dagger.components.DaggerMainScreenComponent;
 import com.example.ekta.assignmentday1.dagger.components.MainScreenComponent;
@@ -16,7 +16,7 @@ import com.example.ekta.assignmentday1.dagger.modules.MainViewModule;
 
 import javax.inject.Inject;
 
-public class MainActivity extends AppCompatActivity implements MainContract.View {
+public class MainActivity extends BaseActivity implements MainContract.View {
 
     private static final String TAG = MainActivity.class.getSimpleName();
     @Inject

@@ -3,11 +3,11 @@ package com.example.ekta.assignmentday1.app.data.remote;
 import android.graphics.Bitmap;
 
 import com.bumptech.glide.RequestManager;
-import com.example.ekta.assignmentday1.app.OnListFetchListener;
 import com.example.ekta.assignmentday1.app.background.GetBitmapFromUrl;
 import com.example.ekta.assignmentday1.app.data.DataSource;
 import com.example.ekta.assignmentday1.app.database.DatabaseHelper;
 import com.example.ekta.assignmentday1.app.database.models.GitHubUserRepository;
+import com.example.ekta.assignmentday1.app.listeners.OnListFetchListener;
 import com.example.ekta.assignmentday1.app.network.NetworkAdapter;
 import com.example.ekta.assignmentday1.app.networkmodel.GitHubRepo;
 

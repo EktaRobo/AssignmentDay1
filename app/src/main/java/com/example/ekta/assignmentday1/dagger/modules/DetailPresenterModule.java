@@ -17,7 +17,9 @@ public class DetailPresenterModule {
 
     @Provides
     @DetailScreenScope
-    public DetailContract.Presenter provideDetailScreenPresenter(DetailContract.View view,
+    public DetailContract.Presenter provideDetailScreenPresenter(DetailContract
+                                                                             .RepositoryListView
+                                                                             view,
                                                                  DataRepository dataRepository) {
         return new DetailPresenter(view, dataRepository);
     }

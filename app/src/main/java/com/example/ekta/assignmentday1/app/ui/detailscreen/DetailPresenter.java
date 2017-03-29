@@ -14,11 +14,11 @@ import java.util.ArrayList;
 
 public class DetailPresenter implements DetailContract.Presenter, DataSource.LoadDataCallback,
         DataSource.LoadImageCallback {
-    private DetailContract.View mView;
+    private DetailContract.RepositoryListView mView;
     private DataRepository mDataRepository;
     private String mGithubUserName;
 
-    public DetailPresenter(DetailContract.View view, DataRepository dataRepository) {
+    public DetailPresenter(DetailContract.RepositoryListView view, DataRepository dataRepository) {
         mView = view;
         mDataRepository = dataRepository;
     }

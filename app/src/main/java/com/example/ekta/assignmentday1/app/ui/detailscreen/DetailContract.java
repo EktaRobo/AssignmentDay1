@@ -11,7 +11,7 @@ import java.util.ArrayList;
  */
 
 public interface DetailContract {
-    interface View {
+    interface RepositoryListView {
         void showProgress();
 
         void hideProgress();

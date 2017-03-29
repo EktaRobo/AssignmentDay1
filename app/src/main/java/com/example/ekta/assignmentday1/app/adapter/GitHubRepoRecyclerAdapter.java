@@ -2,6 +2,7 @@ package com.example.ekta.assignmentday1.app.adapter;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.ekta.assignmentday1.R;
@@ -17,17 +18,20 @@ import java.util.ArrayList;
 public class GitHubRepoRecyclerAdapter extends RecyclerView.Adapter<GitHubRepoViewHolder> {
 
     private ArrayList<GitHubUserRepository> mGitHubRepos;
+    private View.OnClickListener mOnClickListener;
 
-    public GitHubRepoRecyclerAdapter(ArrayList<GitHubUserRepository> gitHubRepos) {
+    public GitHubRepoRecyclerAdapter(ArrayList<GitHubUserRepository> gitHubRepos, View
+            .OnClickListener onClickListener) {
 
         mGitHubRepos = gitHubRepos;
+        mOnClickListener = onClickListener;
     }
 
     @Override
     public GitHubRepoViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
         return new GitHubRepoViewHolder(inflater.inflate(R.layout.github_repo_list_items, parent,
-                false));
+                false), mOnClickListener);
     }
 
     @Override

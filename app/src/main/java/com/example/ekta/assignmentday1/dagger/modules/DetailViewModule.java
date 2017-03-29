@@ -12,15 +12,15 @@ import dagger.Provides;
 
 @Module
 public class DetailViewModule {
-    DetailContract.View mView;
+    DetailContract.RepositoryListView mView;
 
-    public DetailViewModule(DetailContract.View view) {
+    public DetailViewModule(DetailContract.RepositoryListView view) {
         mView = view;
     }
 
     @Provides
     @DetailScreenScope
-    public DetailContract.View getView() {
+    public DetailContract.RepositoryListView getView() {
         return mView;
     }
 }

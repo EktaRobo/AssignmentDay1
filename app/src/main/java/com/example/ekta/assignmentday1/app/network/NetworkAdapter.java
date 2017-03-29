@@ -2,8 +2,8 @@ package com.example.ekta.assignmentday1.app.network;
 
 import android.util.Log;
 
-import com.example.ekta.assignmentday1.app.OnListFetchListener;
 import com.example.ekta.assignmentday1.app.application.GithubRepoApplication;
+import com.example.ekta.assignmentday1.app.listeners.OnListFetchListener;
 import com.example.ekta.assignmentday1.app.networkmodel.GitHubRepo;
 
 import java.util.ArrayList;
